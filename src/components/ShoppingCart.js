@@ -6,7 +6,6 @@ import Item from './ShoppingCartItem';
 const ShoppingCart = () => {
 
 	const cart = useContext(CartContext);
-
 	console.log(cart)
 
 	const getCartTotal = () => {
@@ -17,10 +16,11 @@ const ShoppingCart = () => {
 
 	return (
 		<div className="shopping-cart">
+			
 			{cart.map(item => (
 				<Item key={item.id} {...item} />
 			))}
-
+			
 			<div className="shopping-cart__checkout">
 				<p>Total: ${getCartTotal()}</p>
 				<button>Checkout</button>
